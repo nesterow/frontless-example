@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <meta name="state" content='<%- state %>' />
+    <meta name="attributes" content='<%- shared %>' />
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+    <script src="/assets/pages/index.js"></script>
+    <%- document.head.innerHTML %>
+  </head>
+  <body>
+    <style>
+      body {
+        padding: 2%;
+      }
+      .columns {
+        border-top: 2px solid #ccc;
+        margin-left: .4rem;
+        margin-right: .4rem;
+        margin-top: .4rem;
+      }
+      .column.example, .column.code {
+        padding-top: 26px;
+      }
+      .column.example{
+        background: #fbfbfb;
+      }
+      .column.code {
+        border-left: 12px solid #f7f7f7;
+        min-height: 88vh;
+      }
+    </style>
+    <%- output %>
+  </body>
+</html>

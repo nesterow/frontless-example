@@ -1,0 +1,25 @@
+<index-page>
+  
+  <div style="text-align: center; margin-top: 25vh;">
+    <img src="/assets/media/logo.png" />
+    <br>
+    <br>
+    <a href="/playground" class="btn">
+      Playground
+    </a>
+  </div>
+
+  <script>
+    import Test from './test.riot'
+    import client from 'client'
+    export default {
+      layout: 'base',
+      components: {
+        Test,
+      },
+      onMounted(state, props) {
+        
+      },
+    }
+  </script>
+</index-page>
