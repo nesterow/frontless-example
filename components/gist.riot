@@ -29,7 +29,7 @@
             return f
           })
         })
-        setTimeout(this.reset, 10000)
+        if (typeof window !== 'undefined') setTimeout(this.reset, 10000)
       },
 
       setActive(index){
