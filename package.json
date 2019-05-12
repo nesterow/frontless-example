@@ -6,7 +6,7 @@
   "author": "Anton Nesterov <arch.nesterov@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "gulp build && NODE_PATH=\".:./node_modules\" node index.js ./config.env"
+    "start": "NODE_PATH=\".:./node_modules\" node index.js ./config.env"
   },
   "dependencies": {
     "@babel/preset-env": "^7.4.4",
