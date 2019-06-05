@@ -33,9 +33,9 @@
   <script>
     
     import client from 'client'
-    import {isServer} from 'frontless-utils'
+    import {isServer} from 'components/utils'
 
-    export default {
+    export default () => ({
       id: 'chat-example',
       state: {
         user: null,
@@ -94,7 +94,7 @@
           container.scrollTop = container.scrollHeight - container.clientHeight
         }
       }
-    }
+    })
   </script>
   <style>
     chat .chat {

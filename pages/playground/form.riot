@@ -39,25 +39,21 @@
             {file: 'form.riot.html', name: 'RiotJS'},
             {file: 'form.service.js', name: 'FeathersJS'},
             {file: 'readme.md', name: 'Readme'},
-          ]} />
+          ]}>
+      </gist>
   </playground>
   <script>
     
     import Playground from './base.riot'
     import client from 'client'
-    import {serializeForm} from 'frontless-utils'
+    import {serializeForm} from 'components/utils'
 
-    export default {
+    export default () => ({
       layout: 'playground',
       id: 'form-validation',
       components: {
         Playground,
       },
-
-      async fetch(){
-
-      },
-
       state: {
         errors:{},
         success: false,
@@ -70,14 +66,15 @@
       submit(ev) {
         ev.preventDefault()
         const payload = serializeForm(ev.target)
-        this.update({loading: true, success: false})
+        console.log('unceccesary call')
+        this.update({loading: true, success: false});
         client.service('form-validation').
           create(payload).
           then(() => {
             this.update({loading: false})
           })
       }
-    }
+    })
   </script>
   <style>
     .form-input-hint{

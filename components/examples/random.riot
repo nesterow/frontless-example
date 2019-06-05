@@ -22,10 +22,10 @@
 
     //emulate DB request
     const asyncDelay = () => new Promise((resolve) => {
-      setTimeout(resolve, 100)
+      setTimeout(resolve, 500)
     })
 
-    export default {
+    export default () => ({
       
       id: 'random-number-id',
 
@@ -59,7 +59,7 @@
           })
       }
 
-    }
+    })
   </script>
   <style>
     random {

@@ -40,9 +40,9 @@
     </button>
   </div>
   <script>
-    import {serializeForm} from 'frontless-utils'
+    import {serializeForm} from 'components/utils'
 
-    export default {
+    export default () => ({
       state: {
         firstName: '',
         lastName: '',
@@ -78,6 +78,6 @@
       reload(){
         location.reload()
       }
-    }
+    })
   </script>
 </routes>

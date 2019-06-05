@@ -2,15 +2,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <meta name="state" content='<%- state %>' />
-    <meta name="attributes" content='<%- shared %>' />
+    <% if (CACHE_PAGES.filter((e) => e.endsWith(req.params [0] || '')).length) { %> 
+      <meta name="turbolinks-cache-control" content="no-cache">
+    <%}%>
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
-    <script src="/assets/pages/index.js"></script>
-    <%- document.head.innerHTML %>
-  </head>
-  <body>
+    <script src="/assets/boot.js"></script>
+    <script src="/assets/application.js"></script>
     <style>
       *::-webkit-scrollbar, iframe *::-webkit-scrollbar{
         width:6px;
@@ -34,6 +33,13 @@
         border-left: 12px solid #f7f7f7;
       }
     </style>
+    <%- head %>
+  </head>
+  <body>
+    <style data-ssr-jss><%- stylesheet %></style>
     <%- output %>
+    <script type="data/json" id="globals"><%- req.session.globals %></script>
+    <script type="data/json" id="state"><%- state %></script>
+    <script type="data/json" id="attributes"><%- shared %></script>
   </body>
 </html>

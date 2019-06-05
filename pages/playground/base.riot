@@ -1,5 +1,6 @@
 <playground>
   <header class="header">
+
   </header>
   <section>
       <div class="container">
@@ -14,6 +15,7 @@
             <a href="/playground/chat" class={ buttonClass('/chat') }>Chat</a>
             <a href="/playground/todo" class={ buttonClass('/todo') }>Todo List</a>
             <a href="/playground/routes" class={ buttonClass('/routes') }>Routing</a>
+            <a href="/playground/users" class={ buttonClass('/users') }>Users</a>
           </div> 
         </div>
         <div class="columns">
@@ -27,7 +29,7 @@
       </div>
     </section>
     <script>
-      export default {
+      export default () => ({
         
         state: {
           url: ''
@@ -51,7 +53,7 @@
         },
 
         
-      }
+      })
     </script>
     <style>
       .btn.home {
